@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>add</title>
+	<title>Content</title>
 </head>
 <body>
 <form action="add" method="post">

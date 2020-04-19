@@ -19,6 +19,9 @@ class CreateEmployeesTable extends Migration
              $table->integer('phone_num');
               $table->text('degree_of_job');
                $table->integer('job');
+                $table->string('email')->unique();
+            $table->string('password');
+             $table->rememberToken();
             $table->timestamps();
         });
     }
