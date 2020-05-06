@@ -12,7 +12,10 @@ class MedicController extends Controller
     {
     	$mid=Medic::all();
     	
-        return view('home',['Medic' => $mid ]);
+        return view('home',['Medic' => $mid
+
+
+         ]);
     }
 
     //
@@ -31,5 +34,29 @@ class MedicController extends Controller
 
         return view('home');
     
+}
+
+ public function EditMedic(Request $request,$id){
+     if($request->isMethod('post') ){
+        $con = Medic::find($id);
+            $con->name=$request->input('name');
+            $con->company_name=$request->input('company_name');
+            $con->pass=$request->input('pass');
+            $con->price=$request->input('price');
+            $con->pharmacy=$request->input('pharmacy');
+            $con->status=$request->input('status');
+            $con->save();
+            
+            return redirect("edit"); 
+
+     }
+     else{
+        $Medic=Medic::find($id);
+        return view('edit',['Medic' => $Medic
+
+
+         ]);
+     }
+
 }
 }

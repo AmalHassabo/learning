@@ -20,8 +20,22 @@ status :<input type="text" name="status" placeholder="Enter status">
 <br>
 <input type="submit" value="OK ">
 </form>
-
+<table>
+	@foreach($Medic as $Medic)
+	<tr>
+		<td>
 {{ $Medic }}
+</td>
+<td>
+	<a href="Medic/{{$Medic->id}}">Delete</a>
+</td>
+<td>
+	<a href="edit/{{$Medic->id}}">Edit</a>
+</td>
+</tr>
+</table>
+@endforeach
+
 
 
 

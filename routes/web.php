@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Medic;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,14 @@ Route::get('/add',"ContentController@ShowContent");
 
 Route::post('/add',"ContentController@AddContent");
 
+Route::get('Medic/{id}',function ($id){
+	$Medic=Medic::find($id);
+	$Medic->delete();
+	return redirect("Medic");
+});
+
+Route::get('edit/{id}',"MedicController@EditMedic");
+Route::post('edit/{id}',"MedicController@EditMedic");
 
 
 Auth::routes();
