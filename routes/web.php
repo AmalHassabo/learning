@@ -47,3 +47,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('employeelogin', 'Auth\EmployeeLoginController@showLoginForm');
 
 Route::post('employeelogin', ['as'=>'employee-login','uses'=>'Auth\EmployeeLoginController@login']);
+
+Route::get('/big', 'BigController@index')->name('basic');
+
+Route::get('/about', 'BigController@hello')->name('about');
+
+Route::get('/cart', 'BigController@show')->name('cart');
+
+Route::get('/checkout', 'BigController@welcome')->name('checkout');
+
+Route::get('/contact', 'BigController@cont')->name('contact');
+
+Route::get('/shop-single', 'BigController@home')->name('shop-single');
+
+Route::get('/shop', 'BigController@boss')->name('shop');
+
+
+Route::get('/thankyou', 'BigController@thank')->name('thankyou');
+
